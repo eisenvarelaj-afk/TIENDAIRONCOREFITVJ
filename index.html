@@ -3,161 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRONCORE FITNESS | E-Commerce Comercial</title>
+    <title>IRONCORE FITNESS | Equipamiento de Alto Rendimiento</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">IRONCORE<span>FITNESS</span></div>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="active">Inicio</a></li>
-                <li><a href="#categorias">Categorías</a></li>
-                <li><a href="#promociones">Ofertas</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-            </ul>
-            <div class="nav-actions">
-                <div class="cart-btn" id="cartOpenBtn">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cartBadge">0</span>
-                </div>
-            </div>
+        <div class="logo">IRONCORE<span>FITNESS</span></div>
+        <ul class="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+        </ul>
+        <div class="cart-btn" id="cartOpenBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero" id="inicio">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="badge-hero">EQUIPAMIENTO PROFESIONAL</span>
-            <h1>DOMINA TU<br><span class="highlight">ENTRENAMIENTO</span></h1>
-            <p>Construye tu mejor versión con suplementación de grado clínico y equipamiento diseñado para soportar cargas extremas. No hay atajos.</p>
+            <h1>EQUIPAMIENTO<br>DE ACERO.</h1>
+            <p>Construye tu mejor versión con equipamiento diseñado para soportar cargas extremas. No hay atajos.</p>
             <div class="hero-buttons">
-                <a href="#catalogo" class="btn btn-primary">Comprar Ahora <i class="fas fa-arrow-right"></i></a>
-                <a href="#promociones" class="btn btn-secondary">Ver Descuentos</a>
+                <a href="#catalogo" class="btn btn-primary">Comprar Ahora</a>
+                <a href="#" class="btn btn-secondary">Consultar Plan Pro</a>
             </div>
         </div>
     </header>
 
-    <section class="category-blocks" id="categorias">
-        <div class="container">
-            <div class="section-header">
-                <h2>SECTORES DE <span class="highlight">COMPRA</span></h2>
-            </div>
-            <div class="cat-grid">
-                <div class="cat-card" onclick="app.filterByCategory('Suplementos deportivos')">
-                    <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=800&q=80" alt="Suplementos">
-                    <div class="cat-overlay">
-                        <h3>SUPLEMENTOS</h3>
-                        <span>Ver línea completa <i class="fas fa-chevron-right"></i></span>
-                    </div>
-                </div>
-                <div class="cat-card" onclick="app.filterByCategory('Pesas y accesorios')">
-                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80" alt="Pesas">
-                    <div class="cat-overlay">
-                        <h3>PESO LIBRE</h3>
-                        <span>Ver línea completa <i class="fas fa-chevron-right"></i></span>
-                    </div>
-                </div>
-                <div class="cat-card" onclick="app.filterByCategory('Máquinas y equipamiento')">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Máquinas">
-                    <div class="cat-overlay">
-                        <h3>MÁQUINAS</h3>
-                        <span>Ver línea completa <i class="fas fa-chevron-right"></i></span>
-                    </div>
-                </div>
-            </div>
+    <!-- Category Blocks (Reemplazados por rejilla de productos) -->
+    <section class="promo-section" id="categorias">
+        <div class="section-header">
+            <h2>OFERTAS <span class="highlight">FLASH</span></h2>
+            <p>Equipamiento premium por tiempo limitado.</p>
+        </div>
+        <div class="product-grid" id="promoContainer">
+            <!-- Aquí se inyectarán dinámicamente las ofertas desde app.js -->
         </div>
     </section>
 
-    <section class="promo-section" id="promociones">
-        <div class="container">
-            <div class="section-header center">
-                <h2>OFERTAS <span class="highlight">FLASH</span></h2>
-                <p>Equipamiento premium por tiempo limitado.</p>
-            </div>
-            <div class="product-grid" id="promoContainer"></div>
-        </div>
-    </section>
-
+    <!-- Catalog Section -->
     <section class="catalog-section" id="catalogo">
-        <div class="container">
-            <div class="catalog-header">
-                <h2>INVENTARIO <span class="highlight">GENERAL</span></h2>
-                <div class="catalog-filters">
-                    <div class="search-wrapper">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" placeholder="Buscar productos...">
-                    </div>
-                    <select id="categoryFilter" class="custom-select">
-                        <option value="Todos">Todas las categorías</option>
-                        <option value="Suplementos deportivos">Suplementos deportivos</option>
-                        <option value="Pesas y accesorios">Pesas y accesorios</option>
-                        <option value="Máquinas y equipamiento">Máquinas y equipamiento</option>
-                    </select>
-                </div>
-            </div>
-            <div class="product-grid" id="productContainer"></div>
+        <div class="section-header">
+            <h2>CATÁLOGO <span class="highlight">GENERAL</span></h2>
+            <p>Explora nuestra línea completa de fuerza.</p>
+        </div>
+        <div class="product-grid" id="productContainer">
+            <!-- Aquí se inyectarán dinámicamente los productos desde app.js -->
         </div>
     </section>
 
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-text">
-                    <h2>COTIZA PARA TU <span class="highlight">GIMNASIO</span></h2>
-                    <p>¿Buscas equipar un centro de alto rendimiento? Envíanos tus requerimientos y un asesor especializado te contactará con precios de distribuidor.</p>
-                    <div class="contact-methods">
-                        <p><i class="fas fa-map-marker-alt"></i> Pereira, Colombia (Sede Principal)</p>
-                        <p><i class="fas fa-envelope"></i> b2b@ironcorefitness.com</p>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <form id="contactForm">
-                        <input type="text" id="nombreContacto" placeholder="Nombre o Razón Social" required>
-                        <input type="email" id="correoContacto" placeholder="Correo electrónico corporativo" required>
-                        <textarea id="mensajeContacto" rows="5" placeholder="Detalla los equipos o suplementos que necesitas..." required></textarea>
-                        <button type="submit" class="btn btn-primary btn-block">Solicitar Cotización</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>IRONCORE<span>FITNESS</span></h3>
-                <p>Rendimiento sin concesiones. E-Commerce Demo.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Legal</h4>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Política de Envíos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 IRONCORE FITNESS. Proyecto académico.</p>
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <p>&copy; 2026 IRONCORE FITNESS. Demo para proyecto escolar inspirada en LoroGym.</p>
         </div>
     </footer>
 
+    <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>CARRITO DE COMPRAS</h3>
+            <h3>CARRITO DE PRUEBAS</h3>
             <button id="cartCloseBtn"><i class="fas fa-times"></i></button>
         </div>
-        <div class="cart-items" id="cartItemsContainer"></div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Los items del carrito van aquí -->
+        </div>
         <div class="cart-footer">
             <div class="cart-total-row">
                 <span>Total estimado:</span>
-                <span id="cartTotal" class="highlight-price">$0</span>
+                <span id="cartTotal">$0 COP</span>
             </div>
-            <button class="btn btn-primary btn-block" onclick="alert('Simulación de pasarela de pagos. No se procesan transacciones reales.')">FINALIZAR COMPRA</button>
+            <!-- Botón Finalizar Compra con nuevo comportamiento -->
+            <button class="btn btn-primary btn-block" id="checkoutBtn">FINALIZAR COMPRA DE PRUEBA</button>
         </div>
     </div>
 
+    <!-- Custom JS -->
     <script src="assets/app.js"></script>
 </body>
 </html>
